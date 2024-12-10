@@ -2,16 +2,17 @@
 set -e
 
 dir="/tmp/neovim"
-os=$(uname)
+os=$(uname | tr "[:upper:]" "[:lower:]")
 
+# 1 install neovims
 rm -rf $dir
 
 # clone repo
 git clone --depth 1 --branch v0.10.2 https://github.com/neovim/neovim.git $dir
 # install deps
-if [[ $os == "Linux" ]]; then
+if [[ $os == "linux" ]]; then
     sudo apt install ninja-build gettext cmake unzip curl build-essential
-elif [[ $os == "Darwin" ]]; then
+elif [[ $os == "darwin" ]]; then
     brew install ninja cmake gettext curl
 else
     echo "unknown os: $os"
@@ -26,3 +27,15 @@ sudo make install
 
 # clean up
 rm -rf $dir
+
+# 2 install plugin deps
+# 2.1 fd
+if [[ $os == "linux" ]]; then
+    sudo apt install fd-find
+    sudo ln -s $(which fdfind) ~/usr/local/bin/fd
+elif [[ $os == "darwin" ]]; then
+    brew install fd
+else
+    echo "unknown os: $os"
+    exit 1
+fi
