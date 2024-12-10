@@ -38,18 +38,21 @@ log "------ $action dotfiles ------"
 
 function copy_dir() {
     from=$1
-    to=$2
+    base=$( basename $from )
+    to=$2/$base
 
     execute rm -rf $to
     execute mkdir -p $to
-    execute cp -R $from $to
+    execute cp -R $from/. $to
 }
 
 if [[ $action == "download" ]]; then
     copy_dir dotfiles/config/nvim $HOME/.config
+    copy_dir dotfiles/config/fd $HOME/.config
     copy_dir dotfiles/local/myfirstplugin.nvim $HOME/.local
 elif [[ $action == "upload" ]]; then
     copy_dir $HOME/.config/nvim dotfiles/config
+    copy_dir $HOME/.config/fd dotfiles/config
     copy_dir $HOME/.local/myfirstplugin.nvim dotfiles/local
 else
     log "unknown action: $action"

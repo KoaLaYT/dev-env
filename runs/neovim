@@ -32,7 +32,7 @@ rm -rf $dir
 # 2.1 fd
 if [[ $os == "linux" ]]; then
     sudo apt install fd-find
-    sudo ln -s $(which fdfind) ~/usr/local/bin/fd
+    sudo ln -s $(which fdfind) /usr/local/bin/fd
 elif [[ $os == "darwin" ]]; then
     brew install fd
 else
