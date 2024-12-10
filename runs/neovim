@@ -39,3 +39,13 @@ else
     echo "unknown os: $os"
     exit 1
 fi
+# 2.2 ripgrep
+if [[ $os == "linux" ]]; then
+    sudo apt install ripgrep
+elif [[ $os == "darwin" ]]; then
+    brew install ripgrep
+else
+    echo "unknown os: $os"
+    exit 1
+fi
+
