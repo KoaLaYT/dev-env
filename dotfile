@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+dry="0"
+action=""
+
+while [[ $# > 0 ]]; do
+    if [[ $1 == "--dry" ]]; then
+        dry="1"
+    else
+        action=$1
+    fi
+    shift
+done
+
+if [[ $action != "download" ]] && [[ $action != "upload" ]]; then
+    echo "useage ./dotfiles <download|upload> [--dry]"
+    exit 1
+fi
+
+function log() {
+    if [[ $dry == "1" ]]; then
+        echo "[DRY_RUN]: $@"
+    else
+        echo "$@"
+    fi
+}
+
+function execute() {
+    log "execute $@"
+    if [[ $dry == "1" ]]; then
+        return
+    fi
+    "$@"
+}
+
+log "------ $action dotfiles ------"
+
+function copy_dir() {
+    from=$1
+    to=$2
+
+    execute rm -rf $to
+    execute mkdir -p $to
+    execute cp -R $from $to
+}
+
+if [[ $action == "download" ]]; then
+    copy_dir dotfiles/config/nvim $HOME/.config
+    copy_dir dotfiles/local/myfirstplugin.nvim $HOME/.local
+elif [[ $action == "upload" ]]; then
+    copy_dir $HOME/.config/nvim dotfiles/config
+    copy_dir $HOME/.local/myfirstplugin.nvim dotfiles/local
+else
+    log "unknown action: $action"
+    exit 1
+fi
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -e
+
+dir="/tmp/neovim"
+os=$(uname)
+
+rm -rf $dir
+
+# clone repo
+git clone --depth 1 --branch v0.10.2 https://github.com/neovim/neovim.git $dir
+# install deps
+if [[ $os == "Linux" ]]; then
+    sudo apt install ninja-build gettext cmake unzip curl build-essential
+elif [[ $os == "Darwin" ]]; then
+    brew install ninja cmake gettext curl
+else
+    echo "unknown os: $os"
+    exit 1
+fi
+
+cd $dir
+# build
+make CMAKE_BUILD_TYPE=Release
+# install
+sudo make install
+
+# clean up
+rm -rf $dir

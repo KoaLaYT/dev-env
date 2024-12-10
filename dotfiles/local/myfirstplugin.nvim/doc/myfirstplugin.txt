@@ -1,0 +1,18 @@
+*myfirstplugin.nvim*                                KoaLaYT's first nvim plugin
+=============================================================================
+                                                           *myfirstplugin.nvim*
+
+This is the docs.
+
+                                                            *myfirstplugin.foo*
+myfirstplugin.foo({name}, {mode}, {mappings})
+
+    Bla bla {name}, {mode} and {mappings}.
+>
+        myfirstplugin.foo("example", "n", {
+            ["<leader>n"] = "..."
+        })
+<
+    |myfirstplugin.foo| wow
+<
+vim:tw=78:ts=8:ft=help:norl:
