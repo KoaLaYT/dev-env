@@ -1,5 +1,5 @@
 return {
-  cmd = { 'lua-language-server', },
+  cmd = { vim.fn.expand('$HOME/.local/luals/bin/lua-language-server'), },
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.uv.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then

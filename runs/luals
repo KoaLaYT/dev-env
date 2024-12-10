@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+
+dir="/tmp/luals"
+os=$(uname | tr "[:upper:]" "[:lower:]")
+version="3.13.3"
+filename="lua-language-server"
+
+rm -rf $dir
+mkdir -p $dir
+cd $dir
+curl -OL "https://github.com/LuaLS/lua-language-server/releases/download/$version/lua-language-server-$version-$os-arm64.tar.gz"
+gzip -fd lua-language-server-$version-$os-arm64.tar.gz
+tar xvf lua-language-server-$version-$os-arm64.tar
+rm -rf lua-language-server-$version-$os-arm64.tar
+cp -R $dir $HOME/.local
+rm -rf $dir

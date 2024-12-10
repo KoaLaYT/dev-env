@@ -15,16 +15,16 @@ done
 
 function log() {
     if [[ $dry == "1" ]]; then
-	echo "[DRY_RUN]: $@"
+        echo "[DRY_RUN]: $@"
     else
-	echo "$@"
+        echo "$@"
     fi
 }
 
 function execute() {
     log "execute $@"
     if [[ $dry == "1" ]]; then
-	return
+        return
     fi
     "$@"
 }
@@ -34,11 +34,10 @@ log "$script_dir -- $filter"
 cd "$script_dir"
 scripts=$( find ./runs -mindepth 1 -maxdepth 1 -type f )
 
-for script in "$scripts"; do
+for script in $scripts; do
     if echo "$script" | grep -qv "$filter"; then
-	log "filtering $script"
-	continue
+        log "filtering $script"
+    else
+        execute "$script"
     fi
-
-    execute "$script"
 done
