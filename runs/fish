@@ -21,7 +21,7 @@ make
 sudo make install
 
 # set it as default
-if grep -qv '^/usr/local/bin/fish$' /etc/shells; then
+if ! grep -q '^/usr/local/bin/fish$' /etc/shells; then
     echo '/usr/local/bin/fish' | sudo tee -a /etc/shells
 fi
 chsh -s $(which fish)
