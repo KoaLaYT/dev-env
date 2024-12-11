@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+url=$( gpg --decrypt encrypts/justmysocks_suburl.txt.gpg 2> /dev/null )
+
+go run ./cmd/justmysocks $url 1> $HOME/Downloads/justmysocks-$(date -u +%Y%m%d%H%M%S).yaml
