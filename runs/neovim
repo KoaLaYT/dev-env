@@ -5,7 +5,7 @@ dir="/tmp/neovim"
 os=$(uname | tr "[:upper:]" "[:lower:]")
 
 # 1 install neovims
-rm -rf $dir
+sudo rm -rf $dir
 
 # clone repo
 git clone --depth 1 --branch v0.10.2 https://github.com/neovim/neovim.git $dir
@@ -21,18 +21,15 @@ fi
 
 cd $dir
 # build
-make CMAKE_BUILD_TYPE=Release
+make CMAKE_BUILD_TYPE=RelWithDebInfo
 # install
 sudo make install
-
-# clean up
-rm -rf $dir
 
 # 2 install plugin deps
 # 2.1 fd
 if [[ $os == "linux" ]]; then
     sudo apt install fd-find
-    sudo ln -s $(which fdfind) /usr/local/bin/fd
+    sudo ln -fs $(which fdfind) /usr/local/bin/fd
 elif [[ $os == "darwin" ]]; then
     brew install fd
 else
@@ -48,4 +45,7 @@ else
     echo "unknown os: $os"
     exit 1
 fi
+
+# clean up
+sudo rm -rf $dir
 
