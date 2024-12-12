@@ -1,4 +1,7 @@
-1. setup proxy in `/etc/environment` and `/etc/apt/apt.conf.d/02proxy`
+1. setup proxy
+- `/etc/environment`
+- `/etc/apt/apt.conf.d/02proxy`
+- [docker daemon](https://docs.docker.com/engine/daemon/proxy/)
 
 2. how to securly back up ssh keys
 
