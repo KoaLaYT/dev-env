@@ -8,3 +8,5 @@ if [[ $os == "linux" ]]; then
 else
     brew install tmux fzf
 fi
+
+sudo cp tmux-sessionizer /usr/local/bin
