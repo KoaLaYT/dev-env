@@ -8,7 +8,7 @@ TERM = "xterm-256color"
 padding = { x = 0, y = 0 }
 dynamic_padding = true
 decorations = "Buttonless"
-opacity = 0.85
+opacity = 0.9
 blur = false
 startup_mode = "SimpleFullscreen"
 
@@ -16,6 +16,11 @@ startup_mode = "SimpleFullscreen"
 normal.family = 'JetBrainsMono Nerd Font' # 'MonaspiceNe Nerd Font Propo' 
 size = 16.5
 offset.y = 0
+
+[[keyboard.bindings]]
+key = "l"
+mods = "Command"
+chars ="\u001bl"
 
 [[keyboard.bindings]]
 key = "Key1"
