@@ -49,12 +49,12 @@ function copy_dir() {
 if [[ $action == "download" ]]; then
     copy_dir dotfiles/config/nvim $HOME/.config
     copy_dir dotfiles/config/fd $HOME/.config
-    copy_dir dotfiles/config/wezterm $HOME/.config
+    copy_dir dotfiles/config/alacritty $HOME/.config
     copy_dir dotfiles/local/myfirstplugin.nvim $HOME/.local
 elif [[ $action == "upload" ]]; then
     copy_dir $HOME/.config/nvim dotfiles/config
     copy_dir $HOME/.config/fd dotfiles/config
-    copy_dir $HOME/.config/wezterm dotfiles/config
+    copy_dir $HOME/.config/alacritty dotfiles/config
     copy_dir $HOME/.local/myfirstplugin.nvim dotfiles/local
 else
     log "unknown action: $action"

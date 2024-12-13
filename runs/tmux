@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+os=$(uname | tr "[:upper:]" "[:lower:]")
+
+if [[ $os == "linux" ]]; then
+    sudo apt install tmux fzf
+else
+    brew install tmux fzf
+fi

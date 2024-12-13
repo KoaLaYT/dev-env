@@ -11,13 +11,6 @@ end
 map('i', 'jk', '<Esc>')
 map('n', '<leader>pv', function() vim.cmd('Explore') end)
 
--- Navi
-local navi = require('koalayt.navi')
-vim.keymap.set('n', '<C-h>', navi.wezterm_move_left)
-vim.keymap.set('n', '<C-l>', navi.wezterm_move_right)
-vim.keymap.set('n', '<C-j>', navi.wezterm_move_down)
-vim.keymap.set('n', '<C-k>', navi.wezterm_move_up)
-
 -- Keep cursor when up and down
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
