@@ -1,29 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-dir="/tmp/fish"
 os=$(uname)
-version="3.7.1"
 
 if [[ $os == "Darwin" ]]; then
     brew install fish
-    # set it as default
-    chsh -s $(which fish)
-    exit 1
+else
+    sudo apt install fish
 fi
 
-rm -rf $dir
-mkdir -p $dir
-cd $dir
-git clone --depth 1 --branch $version https://github.com/fish-shell/fish-shell.git .
-cmake .
-make
-sudo make install
-
-# set it as default
-if ! grep -q '^/usr/local/bin/fish$' /etc/shells; then
-    echo '/usr/local/bin/fish' | sudo tee -a /etc/shells
-fi
 chsh -s $(which fish)
-
-rm -rf $dir
+# set it as default
+exit 1
