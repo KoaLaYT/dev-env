@@ -1,0 +1,14 @@
+theme = GruvboxDark
+font-family = JetBrainsMono Nerd Font, PingFang SC
+font-size = 16
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = visible-menu
+fullscreen = true
+background-opacity = 0.9
+# background-blur-radius = 0
+keybind = cmd+one=esc:1
+keybind = cmd+two=esc:2
+keybind = cmd+three=esc:3
+keybind = cmd+four=esc:4
+keybind = cmd+five=esc:5
+keybind = cmd+l=esc:l
