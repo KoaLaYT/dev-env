@@ -3,21 +3,18 @@
 # install zig
 
 os=$(uname | tr "[:upper:]" "[:lower:]")
-url=""
-
-if [[ $os == "darwin" ]]; then
-    url="https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.2457+82f35c518.tar.xz"
-else
-    echo "did not known how to install zig on $os"
-    exit 1
-fi
+machine=$(uname -m)
+version="0.13.0"
+filename="zig-$os-$machine-$version"
+zipfile="$filename.tar.xz"
+url="https://ziglang.org/download/$version/$zipfile"
 
 rm -rf /tmp/zig
 mkdir /tmp/zig
 cd /tmp/zig
 curl -L -o zig.tar.gz $url
 tar xf zig.tar.gz
-cp -r zig-macos-aarch64-0.14.0-dev.2457+82f35c518/. ~/.local/share/zig
+cp -r $filename/. ~/.local/share/zig
 cd - 2> /dev/null
 rm -rf /tmp/zig
 
@@ -25,6 +22,6 @@ rm -rf /tmp/zig
 rm -rf /tmp/zls
 mkdir /tmp/zls
 cd /tmp/zls
-git clone https://github.com/zigtools/zls .
-zig build -Doptimize=ReleaseSafe
-mv zig-out/bin/zls ~/.local/share/zig
+curl -L -o zls.tar.gz https://builds.zigtools.org/zls-$os-$machine-$version.tar.xz
+tar xf zls.tar.gz
+mv zls ~/.local/share/zig
