@@ -3,7 +3,13 @@
 # install zig
 
 os=$(uname | tr "[:upper:]" "[:lower:]")
+if [[ $os == "darwin" ]]; then
+    os="macos"
+fi
 machine=$(uname -m)
+if [[ $machine == "arm64" ]]; then
+    machine="aarch64"
+fi
 version="0.13.0"
 filename="zig-$os-$machine-$version"
 zipfile="$filename.tar.xz"
