@@ -3,8 +3,7 @@ set -e
 
 dir="/tmp/neovim"
 os=$(uname | tr "[:upper:]" "[:lower:]")
-version=nightly
-#v0.10.4
+version=v0.11.2
 
 # 1 install neovims
 sudo rm -rf $dir
