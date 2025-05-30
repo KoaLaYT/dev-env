@@ -3,12 +3,14 @@ set -e
 
 dir="/tmp/neovim"
 os=$(uname | tr "[:upper:]" "[:lower:]")
+version=nightly
+#v0.10.4
 
 # 1 install neovims
 sudo rm -rf $dir
 
 # clone repo
-git clone --depth 1 --branch v0.10.2 https://github.com/neovim/neovim.git $dir
+git clone --depth 1 --branch $version https://github.com/neovim/neovim.git $dir
 # install deps
 if [[ $os == "linux" ]]; then
     sudo apt install ninja-build gettext cmake unzip curl build-essential
@@ -19,11 +21,12 @@ else
     exit 1
 fi
 
-cd $dir
+pushd $dir
 # build
-make CMAKE_BUILD_TYPE=RelWithDebInfo
+make CMAKE_BUILD_TYPE=Release
 # install
 sudo make install
+popd
 
 # 2 install plugin deps
 # 2.1 fd

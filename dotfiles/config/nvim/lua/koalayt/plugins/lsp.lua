@@ -2,8 +2,6 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      local lspconfig = require('lspconfig')
-
       -- set border
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
       function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -30,8 +28,14 @@ return {
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       for _, lang in ipairs(langs) do
-        local settings = require('koalayt.lspsettings.' .. lang)
-        lspconfig[lang].setup(vim.tbl_deep_extend('force', { capabilities, }, settings))
+        vim.lsp.enable(lang)
+        -- vim.lsp.config(lang, {
+        --   settings = {
+        --     capabilities,
+        --   },
+        -- })
+        -- local settings = require('koalayt.lspsettings.' .. lang)
+        -- lspconfig[lang].setup(vim.tbl_deep_extend('force', { capabilities, }, settings))
       end
 
 

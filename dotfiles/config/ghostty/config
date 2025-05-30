@@ -1,11 +1,15 @@
 theme = GruvboxDark
-font-family = JetBrainsMono Nerd Font, PingFang SC
-font-size = 16
+font-family = ""
+font-family = "JetBrainsMono Nerd Font"
+# font-family = "Mononoki Nerd Font Mono"
+# font-family = "Input Mono Narrow"
+font-family = "PingFang SC"
+font-size = 17
 macos-titlebar-style = hidden
 macos-non-native-fullscreen = visible-menu
 fullscreen = true
-background-opacity = 0.9
-# background-blur-radius = 0
+background-opacity = 0.5
+background-blur = 35
 keybind = cmd+one=esc:1
 keybind = cmd+two=esc:2
 keybind = cmd+three=esc:3

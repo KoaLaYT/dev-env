@@ -24,6 +24,7 @@ return {
   { 'rose-pine/neovim',       name = 'rose-pine',     lazy = true, },
   {
     'ellisonleao/gruvbox.nvim',
+    lazy = false,
     config = function()
       require('gruvbox').setup({
         -- dim_inactive = true,
