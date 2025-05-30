@@ -9,6 +9,10 @@ else
     sudo apt install fish
 fi
 
-chsh -s $(which fish)
 # set it as default
+chsh -s $(which fish)
+
+# install starship
+curl -sS https://starship.rs/install.sh | sh
+
 exit 1
