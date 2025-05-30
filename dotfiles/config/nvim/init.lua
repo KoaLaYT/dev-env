@@ -111,6 +111,7 @@ o.formatoptions = 'qjl1'  -- Don't autoformat comments
 o.shortmess:append('WcC') -- Reduce command line messages
 o.splitkeep = 'screen'    -- Reduce scroll during window split
 
+require('koalayt.lsp')
 
 -- Lazy plugins
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
