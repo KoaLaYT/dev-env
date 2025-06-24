@@ -8,8 +8,8 @@ font-size = 17
 macos-titlebar-style = hidden
 macos-non-native-fullscreen = visible-menu
 fullscreen = true
-background-opacity = 0.5
-background-blur = 35
+background-opacity = 0.8
+# background-blur = 0
 keybind = cmd+one=esc:1
 keybind = cmd+two=esc:2
 keybind = cmd+three=esc:3
