@@ -10,8 +10,8 @@ machine=$(uname -m)
 if [[ $machine == "arm64" ]]; then
     machine="aarch64"
 fi
-version="0.14.0"
-filename="zig-$os-$machine-$version"
+version="0.14.1"
+filename="zig-$machine-$os-$version"
 zipfile="$filename.tar.xz"
 url="https://ziglang.org/download/$version/$zipfile"
 
