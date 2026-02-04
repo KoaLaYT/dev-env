@@ -1,18 +1,64 @@
-theme = GruvboxDark
+auto-update-channel = tip
+theme = Gruvbox Dark
 font-family = ""
 font-family = "JetBrainsMono Nerd Font"
-# font-family = "Mononoki Nerd Font Mono"
-# font-family = "Input Mono Narrow"
 font-family = "PingFang SC"
-font-size = 17
+# font-family = "Input Mono Narrow"
+# font-family = "Mononoki Nerd Font Mono"
+# font-family = "MonaspiceNe Nerd Font"
+font-size = 15
 macos-titlebar-style = hidden
 macos-non-native-fullscreen = visible-menu
 fullscreen = true
-background-opacity = 0.8
-# background-blur = 0
-keybind = cmd+one=esc:1
-keybind = cmd+two=esc:2
-keybind = cmd+three=esc:3
-keybind = cmd+four=esc:4
-keybind = cmd+five=esc:5
-keybind = cmd+l=esc:l
+background-opacity = 0.85
+background-blur = 30
+keybind = cmd+digit_1=esc:1
+keybind = cmd+digit_2=esc:2
+keybind = cmd+digit_3=esc:3
+keybind = cmd+digit_4=esc:4
+keybind = cmd+digit_5=esc:5
+keybind = cmd+key_l=esc:l
+
+# copy from https://github.com/linkarzu/dotfiles-latest/blob/main/ghostty/config
+# Some shaders can be found in this repo, they're usually uploaded to discord
+# https://github.com/hackrmomo/ghostty-shaders
+
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/crt.glsl
+# custom-shader = shaders/cubes.glsl
+# custom-shader = shaders/dither.glsl
+# custom-shader = shaders/drunkard.glsl
+# custom-shader = shaders/fireworks-rockets.glsl
+# custom-shader = shaders/fireworks.glsl
+# custom-shader = shaders/gears-and-belts.glsl
+# custom-shader = shaders/glitchy.glsl
+# custom-shader = shaders/glow-rgbsplit-twitchy.glsl
+# custom-shader = shaders/gradient-background.glsl
+# custom-shader = shaders/inside-the-matrix.glsl
+# custom-shader = shaders/just-snow.glsl
+# custom-shader = shaders/matrix-hallway.glsl
+# custom-shader = shaders/negative.glsl
+# custom-shader = shaders/retro-terminal.glsl
+# custom-shader = shaders/smoke-and-ghost.glsl
+# custom-shader = shaders/sparks-from-fire.glsl
+# custom-shader = shaders/spotlight.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+# custom-shader = shaders/tft.glsl
+# custom-shader = shaders/underwater.glsl
+# custom-shader = shaders/water.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+# custom-shader = shaders/cursor_blaze_no_trail.glsl
+# custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_smear_fade.glsl

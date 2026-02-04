@@ -34,7 +34,7 @@ map('n', '<leader>nt', function()
   vim.cmd(string.format('vs ~/Notes/%s.md', now))
 end)
 map('n', '<leader>nd', ':vs ~/Notes/TODO.md<CR>')
-map('n', '<leader>nv', ':RenderMarkdown toggle<CR>')
+map('n', '<leader>nv', ':Markview toggle<CR>')
 
 -- Move visual select blocks up and down
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
