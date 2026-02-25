@@ -22,7 +22,7 @@ has_session() {
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find $HOME/Work/read2n $HOME/Work/metale $HOME/Projects $HOME/Labs -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$({ echo "$HOME/Notes"; find $HOME/Work/read2n $HOME/Work/metale $HOME/Projects $HOME/Labs -mindepth 1 -maxdepth 1 -type d; } | fzf)
 fi
 
 if [[ -z $selected ]]; then
