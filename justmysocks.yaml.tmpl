@@ -8,6 +8,14 @@ external-controller: 127.0.0.1:9090
 secret: koalayt_amen
 external-ui: ./metacubexd
 
+geox-url:
+  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb"
+
+geo-auto-update: true # 是否自动更新 geodata
+geo-update-interval: 24 # 更新间隔，单位：小时
+
 dns:
   enable: true
   listen: 0.0.0.0:53
