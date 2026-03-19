@@ -1,9 +1,13 @@
-mixed-port: 7890
+#mixed-port: 7890
 allow-lan: false
 mode: rule
 ipv6: false
 log-level: info
-external-controller: 0.0.0.0:9090
+
+external-controller: 127.0.0.1:9090
+secret: koalayt_amen
+external-ui: ./metacubexd
+
 dns:
   enable: true
   listen: 0.0.0.0:53
@@ -33,20 +37,15 @@ dns:
     - localhost.sec.qq.com
     - localhost.ptlogin2.qq.com
     - +.msftconnecttest.com
+
 tun:
   enable: true
-  stack: system
+  stack: gvisor
   auto-route: true
   auto-detect-interface: true
   dns-hijack:
-    - 114.114.114.114
-    - 180.76.76.76
-    - 119.29.29.29
-    - 223.5.5.5
-    - 8.8.8.8
-    - 8.8.4.4
-    - 1.1.1.1
-    - 1.0.0.1
+    - 0.0.0.0:53
+
 proxies:
   {{- range .proxies}} 
   - {{ . -}} 
