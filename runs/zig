@@ -28,6 +28,6 @@ rm -rf /tmp/zig
 rm -rf /tmp/zls
 mkdir /tmp/zls
 cd /tmp/zls
-curl -L -o zls.tar.gz https://builds.zigtools.org/zls-$os-$machine-$version.tar.xz
+curl -L -o zls.tar.gz https://github.com/zigtools/zls/releases/download/$version/zls-$machine-$os.tar.xz
 tar xf zls.tar.gz
 mv zls ~/.local/share/zig
